@@ -20,8 +20,19 @@ function mostraListaAmigos() {
 
     for (let i = 0; i < amigos.length; i++) {
         let li = document.createElement('li');
-        li.textContent = amigos[i];
+        li.innerHTML = amigos[i];
         lista.appendChild(li);
     }
 }
 
+// função para sortear os amigos
+function sortearAmigo() {
+    let resultado = document.getElementById('resultado');
+    if (amigos.length == 0) {
+        alert('Nenhum amigo foi adicionado. Gentileza adicionar amigos.')
+    } else {
+        let i = Math.floor(Math.random() * amigos.length);
+        let sorteado = amigos[i];
+        resultado.innerHTML = `O amigo sorteado é: ${sorteado}`;
+    }
+}
